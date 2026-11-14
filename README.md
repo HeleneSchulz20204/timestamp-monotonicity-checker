@@ -41,3 +41,10 @@ always a violation because `!(a <= b)` is true when either side is `NaN`. The
 library deliberately does not coerce strings to numbers or `Date` objects to
 epoch values; mixing types in one sequence is a caller bug and coercing would
 hide it. Parse your timestamps before calling.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
