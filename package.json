@@ -1,6 +1,6 @@
 {
   "name": "timestamp-monotonicity-checker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Checks timestamp sequences for order and flags the first out-of-order pair.",
   "type": "module",
   "main": "src/index.js",
